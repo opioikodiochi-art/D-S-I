@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dampak Sosial Informatika (DSI)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            900: '#312e81',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-500 selection:text-white">
+
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Brand Logo / Title -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-cyan-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20">
+                        <i class="fa-solid fa-network-wired text-lg"></i>
+                    </div>
+                    <div>
+                        <span class="text-lg font-bold bg-gradient-to-r from-brand-700 to-cyan-600 bg-clip-text text-transparent">DSI Hub</span>
+                        <p class="text-xs text-slate-500 hidden sm:block">Dampak Sosial Informatika</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-4">
+                    <a href="#materi" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-100 transition">Materi Utama</a>
+                    <a href="#media" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-100 transition">Media Visual</a>
+                    <a href="#simulasi" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-100 transition">Mini Game</a>
+                    <a href="#kuis" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-100 transition">Kuis</a>
+                    <a href="#glosarium" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-100 transition">Glosarium</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex md:hidden">
+                    <button id="menu-btn" class="p-2 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-100 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4 space-y-1">
+            <a href="#materi" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">Materi Utama</a>
+            <a href="#media" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">Media Visual</a>
+            <a href="#simulasi" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">Mini Game</a>
+            <a href="#kuis" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">Kuis</a>
+            <a href="#glosarium" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">Glosarium</a>
+        </div>
+    </header>
+
+    <section class="relative overflow-hidden bg-gradient-to-b from-brand-900 via-slate-900 to-slate-900 text-white py-20 lg:py-28">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#6366f1_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-brand-500/20 text-cyan-300 border border-cyan-500/30 mb-6">
+                    <i class="fa-solid fa-bolt text-cyan-400"></i> Pembelajaran Interaktif Modern
+                </span>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                    Dampak Sosial <span class="bg-gradient-to-r from-cyan-400 to-indigo-400 bg-clip-text text-transparent">Informatika</span>
+                </h1>
+                <p class="text-slate-300 text-lg sm:text-xl mb-10 leading-relaxed">
+                    Pelajari bagaimana teknologi informasi mengubah tatanan kehidupan sosial masyarakat, pahami peluang positifnya, dan hadapi tantangan negatifnya secara bijak.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#materi" class="px-8 py-3.5 rounded-xl font-semibold bg-brand-600 text-white hover:bg-brand-700 shadow-lg shadow-brand-600/30 transition transform hover:-translate-y-0.5">
+                        Mulai Belajar <i class="fa-solid fa-arrow-down ml-2 text-sm"></i>
+                    </a>
+                    <a href="#simulasi" class="px-8 py-3.5 rounded-xl font-semibold bg-slate-800 text-cyan-400 border border-slate-700 hover:bg-slate-700 transition">
+                        Mainkan Simulasi <i class="fa-solid fa-gamepad ml-2 text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main id="materi" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+        
+        <!-- Section Intro & Definition -->
+        <div class="bg-white rounded-2xl p-8 sm:p-12 shadow-sm border border-slate-200">
+            <div class="max-w-3xl">
+                <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Modul 01</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-1 mb-4">Pengertian Dampak Sosial Informatika</h2>
+                <p class="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
+                    Informatika tidak hanya berurusan dengan perangkat keras dan perangkat lunak komputer, tetapi juga membawa pengaruh yang sangat besar terhadap struktur sosial, budaya, ekonomi, dan cara hidup manusia bermasyarakat. Dampak sosial informatika mencakup perubahan perilaku, pola komunikasi, serta nilai-nilai etika yang lahir akibat adopsi teknologi digital di tengah masyarakat.
+                </p>
+                <div class="grid sm:grid-cols-2 gap-4 mt-6">
+                    <div class="p-4 rounded-xl bg-brand-50 border border-brand-100 flex items-start space-x-3">
+                        <div class="text-brand-600 text-xl mt-0.5"><i class="fa-solid fa-globe"></i></div>
+                        <div>
+                            <h4 class="font-semibold text-slate-900">Globalisasi Informasi</h4>
+                            <p class="text-sm text-slate-600">Batas geografis antarnegara seakan runtuh berkat kecepatan transfer data.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 rounded-xl bg-cyan-50 border border-cyan-100 flex items-start space-x-3">
+                        <div class="text-cyan-600 text-xl mt-0.5"><i class="fa-solid fa-users-gear"></i></div>
+                        <div>
+                            <h4 class="font-semibold text-slate-900">Transformasi Perilaku</h4>
+                            <p class="text-sm text-slate-600">Perubahan pola pikir dan interaksi sehari-hari menuju era digital native.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Positive Impacts -->
+        <div>
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-emerald-600 font-semibold text-sm uppercase tracking-wider">Aspek Positif</span>
+                <h2 class="text-3xl font-bold text-slate-900 mt-1">Kemajuan dan Peluang Baru</h2>
+                <p class="text-slate-600 mt-2">Berbagai kemudahan yang dihadirkan oleh perkembangan teknologi informatika masa kini.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 card-hover">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-2">Kemudahan Komunikasi</h3>
+                    <p class="text-sm text-slate-600">Menghubungkan orang dari berbagai belahan dunia secara instan melalui video call, pesan instan, dan media sosial.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 card-hover">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-book-open-reader"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-2">Akses Informasi Luas</h3>
+                    <p class="text-sm text-slate-600">Ilmu pengetahuan, e-book, jurnal ilmiah, dan portal edukasi dapat diakses siapa saja kapan saja secara terbuka.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 card-hover">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-2">E-Commerce & Bisnis</h3>
+                    <p class="text-sm text-slate-600">Mendorong pertumbuhan UMKM dan perdagangan digital tanpa batasan jarak fisik toko.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 card-hover">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-bullhorn"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-2">Keterbukaan Informasi</h3>
+                    <p class="text-sm text-slate-600">Masyarakat dapat mengawasi kebijakan publik dan berpartisipasi aktif dalam diskursus pemerintahan (e-government).</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Negative Impacts -->
+        <div>
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-rose-600 font-semibold text-sm uppercase tracking-wider">Aspek Negatif & Ancaman</span>
+                <h2 class="text-3xl font-bold text-slate-900 mt-1">Sisi Gelap Dunia Digital</h2>
+                <p class="text-slate-600 mt-2">Berbagai risiko dan dampak buruk yang wajib diwaspadai dalam penggunaan teknologi.</p>
+            </div>
+            <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <!-- Neg 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 card-hover">
+                    <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="font-bold text-base text-slate-900 mb-2">Cyberbullying</h3>
+                    <p class="text-xs text-slate-600">Perundungan dunia maya yang dapat merusak mental korban secara psikologis.</p>
+                </div>
+                <!-- Neg 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 card-hover">
+                    <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <h3 class="font-bold text-base text-slate-900 mb-2">Penyebaran Hoax</h3>
+                    <p class="text-xs text-slate-600">Berita bohong yang dirancang untuk memecah belah dan memicu kepanikan publik.</p>
+                </div>
+                <!-- Neg 3 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 card-hover">
+                    <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+                    <h3 class="font-bold text-base text-slate-900 mb-2">Kecanduan Gadget</h3>
+                    <p class="text-xs text-slate-600">Penurunan interaksi sosial nyata, gangguan tidur, serta masalah kesehatan fisik.</p>
+                </div>
+                <!-- Neg 4 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 card-hover">
+                    <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-user-secret"></i>
+                    </div>
+                    <h3 class="font-bold text-base text-slate-900 mb-2">Ancaman Privasi</h3>
+                    <p class="text-xs text-slate-600">Pencurian data pribadi (data leaking) oleh pihak yang tidak bertanggung jawab.</p>
+                </div>
+                <!-- Neg 5 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 card-hover md:col-span-3 lg:col-span-1">
+                    <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-copyright"></i>
+                    </div>
+                    <h3 class="font-bold text-base text-slate-900 mb-2">Pelanggaran HKI</h3>
+                    <p class="text-xs text-slate-600">Pembajakan karya digital, software berbayar ilegal, dan plagiarisme konten.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ethics and Law -->
+        <div class="bg-gradient-to-r from-brand-900 to-indigo-900 rounded-3xl p-8 sm:p-12 text-white shadow-xl">
+            <div class="max-w-3xl">
+                <span class="text-cyan-400 font-semibold text-sm uppercase tracking-wider">Regulasi & Norma</span>
+                <h2 class="text-2xl sm:text-3xl font-bold mt-1 mb-4">Etika dan Hukum Digital</h2>
+                <p class="text-slate-300 text-base leading-relaxed mb-6">
+                    Kebebasan di internet bukan berarti tanpa batas. Setiap warga digital wajib memahami norma kesopanan digital serta batasan hukum yang berlaku di Indonesia agar terhindar dari jerat pidana.
+                </p>
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/10">
+                        <div class="text-cyan-400 text-2xl mb-3"><i class="fa-solid fa-handshake-angle"></i></div>
+                        <h3 class="font-bold text-lg mb-2">Netiket (Netiquette)</h3>
+                        <p class="text-sm text-slate-300 leading-relaxed">Etika dalam berkomunikasi secara daring. Menggunakan bahasa yang sopan, menghargai pendapat orang lain, dan tidak menyebarkan permusuhan.</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/10">
+                        <div class="text-cyan-400 text-2xl mb-3"><i class="fa-solid fa-scale-balanced"></i></div>
+                        <h3 class="font-bold text-lg mb-2">Undang-Undang ITE</h3>
+                        <p class="text-sm text-slate-300 leading-relaxed">Undang-Undang Informasi dan Transaksi Elektronik mengatur berbagai hal terkait perbuatan hukum siber, pencemaran nama baik, serta ujaran kebencian.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <section id="media" class="bg-slate-100 py-20 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Ilustrasi Visual</span>
+                <h2 class="text-3xl font-bold text-slate-900 mt-1">Media Visual & Infografis</h2>
+                <p class="text-slate-600 mt-2">Gambaran situasi nyata interaksi digital dan keamanan informasi masa kini.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Image Card 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 card-hover">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" alt="Kolaborasi Digital" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/6366f1/ffffff?text=Kolaborasi+Digital'">
+                    <div class="p-6">
+                        <span class="text-xs font-semibold text-brand-600 uppercase">Sosial Positif</span>
+                        <h3 class="font-bold text-lg text-slate-900 mt-1 mb-2">Kolaborasi Tanpa Batas</h3>
+                        <p class="text-sm text-slate-600">Teknologi memfasilitasi kerja tim jarak jauh secara efektif dan produktif dari berbagai belahan dunia.</p>
+                    </div>
+                </div>
+                <!-- Image Card 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 card-hover">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="Keamanan Siber" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/0ea5e9/ffffff?text=Keamanan+Siber'">
+                    <div class="p-6">
+                        <span class="text-xs font-semibold text-rose-600 uppercase">Keamanan Data</span>
+                        <h3 class="font-bold text-lg text-slate-900 mt-1 mb-2">Ancaman & Proteksi Siber</h3>
+                        <p class="text-sm text-slate-600">Pentingnya mengamankan data pribadi dari ancaman phising, malware, dan pencurian akun digital.</p>
+                    </div>
+                </div>
+                <!-- Image Card 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 card-hover">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80" alt="Literasi Digital" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/10b981/ffffff?text=Literasi+Digital'">
+                    <div class="p-6">
+                        <span class="text-xs font-semibold text-emerald-600 uppercase">Edukasi Warga</span>
+                        <h3 class="font-bold text-lg text-slate-900 mt-1 mb-2">Literasi Digital Masyarakat</h3>
+                        <p class="text-sm text-slate-600">Membangun kesadaran kritis dalam menyaring informasi sebelum disebarluaskan di media sosial.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="simulasi" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-md border border-slate-200">
+            <div class="text-center max-w-xl mx-auto mb-10">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-brand-100 text-brand-700 mb-3">
+                    <i class="fa-solid fa-gamepad"></i> Mini Game Edukatif
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Detektif Hoax & Etika Digital</h2>
+                <p class="text-slate-600 text-sm mt-1">Uji kemampuanmu dalam menghadapi skenario digital sehari-hari!</p>
+            </div>
+
+            <!-- Game Container -->
+            <div id="game-card" class="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8">
+                <div class="flex justify-between items-center mb-6 border-b border-slate-200 pb-4">
+                    <span id="game-progress" class="text-xs font-bold uppercase tracking-wider text-brand-600">Skenario 1 dari 5</span>
+                    <span id="game-score" class="text-sm font-semibold bg-brand-100 text-brand-700 px-3 py-1 rounded-full">Skor: 0</span>
+                </div>
+
+                <!-- Question Text -->
+                <div class="mb-6">
+                    <h3 id="scenario-title" class="text-lg sm:text-xl font-bold text-slate-900 mb-2">Judul Skenario</h3>
+                    <p id="scenario-desc" class="text-slate-600 text-base leading-relaxed">Deskripsi skenario akan muncul di sini...</p>
+                </div>
+
+                <!-- Action Choices -->
+                <div id="choices-container" class="space-y-3 mb-6">
+                    <!-- Dynamic choices generated by JS -->
+                </div>
+
+                <!-- Feedback Box -->
+                <div id="game-feedback" class="hidden p-4 rounded-xl mb-6 text-sm"></div>
+
+                <!-- Next Button -->
+                <div class="flex justify-end">
+                    <button id="next-scenario-btn" onclick="nextScenario()" class="hidden px-6 py-2.5 rounded-xl bg-brand-600 text-white font-semibold hover:bg-brand-700 transition">
+                        Lanjut Skenario <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Game Finish Screen -->
+            <div id="game-over-screen" class="hidden text-center py-8">
+                <div class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-3xl mx-auto mb-4">
+                    <i class="fa-solid fa-award"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-900 mb-2">Simulasi Selesai!</h3>
+                <p id="final-score-text" class="text-slate-600 mb-6">Skor akhir Anda: 5/5</p>
+                <button onclick="restartGame()" class="px-6 py-3 rounded-xl bg-brand-600 text-white font-semibold hover:bg-brand-700 transition">
+                    <i class="fa-solid fa-rotate-right mr-2"></i> Mainkan Lagi
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="kuis" class="bg-slate-100 py-20 border-y border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-xl mx-auto mb-12">
+                <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Evaluasi Pemahaman</span>
+                <h2 class="text-3xl font-bold text-slate-900 mt-1">Kuis Interaktif DSI</h2>
+                <p class="text-slate-600 mt-2">Jawab 5 pertanyaan pilihan ganda berikut untuk menguji pemahaman materi.</p>
+            </div>
+
+            <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-slate-200">
+                <div id="quiz-container" class="space-y-8">
+                    <!-- Dynamic Quiz generated by JS -->
+                </div>
+                <div class="mt-8 pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <button onclick="submitQuiz()" class="w-full sm:w-auto px-8 py-3 bg-brand-600 text-white font-semibold rounded-xl hover:bg-brand-700 transition shadow-md shadow-brand-600/20">
+                        <i class="fa-solid fa-check-circle mr-2"></i> Periksa Jawaban Kuis
+                    </button>
+                    <div id="quiz-result" class="text-lg font-bold text-slate-800"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="glosarium" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-16">
+        
+        <!-- Glossary Accordion -->
+        <div>
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Kamus Digital</span>
+                <h2 class="text-3xl font-bold text-slate-900 mt-1">Glosarium Istilah Informatika</h2>
+                <p class="text-slate-600 mt-2">Klik pada istilah untuk melihat penjelasan ringkasnya.</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto space-y-4">
+                <!-- Item 1 -->
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                    <button onclick="toggleAccordion('acc-1')" class="w-full px-6 py-4 text-left font-semibold text-slate-800 flex justify-between items-center hover:bg-slate-50 transition">
+                        <span>Phishing</span>
+                        <i id="icon-acc-1" class="fa-solid fa-chevron-down text-sm text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="acc-1" class="hidden px-6 pb-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-3">
+                        Metode penipuan siber dengan menyamar sebagai institusi resmi atau terpercaya melalui pesan/email untuk mencuri data sensitif seperti kata sandi atau nomor PIN pengguna.
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                    <button onclick="toggleAccordion('acc-2')" class="w-full px-6 py-4 text-left font-semibold text-slate-800 flex justify-between items-center hover:bg-slate-50 transition">
+                        <span>Digital Footprint (Jejak Digital)</span>
+                        <i id="icon-acc-2" class="fa-solid fa-chevron-down text-sm text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="acc-2" class="hidden px-6 pb-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-3">
+                        Jejak atau rekam jejak aktivitas digital seseorang yang tertinggal saat menggunakan internet, termasuk unggahan media sosial, komentar, dan riwayat pencarian.
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                    <button onclick="toggleAccordion('acc-3')" class="w-full px-6 py-4 text-left font-semibold text-slate-800 flex justify-between items-center hover:bg-slate-50 transition">
+                        <span>Cyberbullying</span>
+                        <i id="icon-acc-3" class="fa-solid fa-chevron-down text-sm text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="acc-3" class="hidden px-6 pb-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-3">
+                        Tindakan perundungan, ancaman, atau pelecehan yang dilakukan seseorang atau kelompok terhadap orang lain menggunakan media digital atau internet.
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                    <button onclick="toggleAccordion('acc-4')" class="w-full px-6 py-4 text-left font-semibold text-slate-800 flex justify-between items-center hover:bg-slate-50 transition">
+                        <span>Netiket</span>
+                        <i id="icon-acc-4" class="fa-solid fa-chevron-down text-sm text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="acc-4" class="hidden px-6 pb-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-3">
+                        Singkatan dari Etika Internet, yaitu seperangkat aturan sopan santun dan norma berperilaku yang disarankan saat berinteraksi di ruang digital.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Practical Tips -->
+        <div>
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Tips Praktis</span>
+                <h2 class="text-3xl font-bold text-slate-900 mt-1">5 Langkah Menjadi Warga Digital Bijak</h2>
+                <p class="text-slate-600 mt-2">Panduan praktis dalam menjaga keselamatan dan etika di dunia maya.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 text-center">
+                    <div class="w-10 h-10 rounded-full bg-brand-100 text-brand-600 font-bold flex items-center justify-center mx-auto mb-4">1</div>
+                    <h3 class="font-bold text-slate-900 text-sm mb-2">Saring Sebelum Share</h3>
+                    <p class="text-xs text-slate-600">Pastikan kebenaran informasi sebelum membagikannya ke orang lain.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 text-center">
+                    <div class="w-10 h-10 rounded-full bg-brand-100 text-brand-600 font-bold flex items-center justify-center mx-auto mb-4">2</div>
+                    <h3 class="font-bold text-slate-900 text-sm mb-2">Jaga Data Pribadi</h3>
+                    <p class="text-xs text-slate-600">Jangan pernah membagikan PIN, OTP, atau NIK sembarangan di internet.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 text-center">
+                    <div class="w-10 h-10 rounded-full bg-brand-100 text-brand-600 font-bold flex items-center justify-center mx-auto mb-4">3</div>
+                    <h3 class="font-bold text-slate-900 text-sm mb-2">Hargai Privasi</h3>
+                    <p class="text-xs text-slate-600">Minta izin sebelum mengunggah foto atau informasi tentang orang lain.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 text-center">
+                    <div class="w-10 h-10 rounded-full bg-brand-100 text-brand-600 font-bold flex items-center justify-center mx-auto mb-4">4</div>
+                    <h3 class="font-bold text-slate-900 text-sm mb-2">Gunakan Bahasa Sopan</h3>
+                    <p class="text-xs text-slate-600">Hindari ujaran kebencian dan komentar negatif di kolom komentar.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 text-center sm:col-span-2 lg:col-span-1">
+                    <div class="w-10 h-10 rounded-full bg-brand-100 text-brand-600 font-bold flex items-center justify-center mx-auto mb-4">5</div>
+                    <h3 class="font-bold text-slate-900 text-sm mb-2">Batasi Waktu Screen</h3>
+                    <p class="text-xs text-slate-600">Jaga keseimbangan antara kehidupan digital dan interaksi nyata.</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center space-x-3">
+                    <div class="w-9 h-9 rounded-xl bg-brand-600 flex items-center justify-center text-white">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+                    <span class="text-white font-bold text-lg">Dampak Sosial Informatika (DSI)</span>
+                </div>
+                <p class="text-sm text-center md:text-right">
+                    &copy; 2026 DSI Learning Hub. Website edukasi interaktif untuk masyarakat digital yang cerdas dan beretika.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle mobile menu
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Mini Game Data & State
+        const scenarios = [
+            {
+                title: "Berita Provokatif di WhatsApp",
+                desc: "Anda menerima pesan berantai di grup WhatsApp dengan judul provokatif yang menjelekkan suatu kelompok tertentu tanpa sumber resmi.",
+                choices: [
+                    { text: "Langsung sebar ke grup lain agar orang lain waspada", correct: false, feedback: "Salah! Menyebar berita tanpa verifikasi dapat memperluas hoax dan memicu konflik." },
+                    { text: "Cek kebenarannya di situs cek fakta terpercaya sebelum bertindak", correct: true, feedback: "Benar! 'Saring sebelum share' adalah kunci utama menghindari penyebaran berita bohong." },
+                    { text: "Abaikan saja dan diamkan selamanya", correct: false, feedback: "Kurang tepat. Lebih baik lakukan verifikasi atau laporkan jika meresahkan." }
+                ]
+            },
+            {
+                title: "Pesan Minta Kode OTP",
+                desc: "Seseorang menghubungi Anda mengaku dari bank dan meminta kode OTP yang baru saja masuk ke SMS Anda untuk verifikasi hadiah.",
+                choices: [
+                    { text: "Berikan kode OTP karena mengaku dari pihak bank resmi", correct: false, feedback: "Salah besar! Kode OTP bersifat rahasia dan tidak boleh diberikan kepada siapa pun termasuk pihak bank." },
+                    { text: "Tolak dan langsung blokir nomor tersebut", correct: true, feedback: "Benar! Tindakan ini adalah upaya pencegahan phishing dan pencurian akun." },
+                    { text: "Tanya dulu hadiah apa yang akan diberikan", correct: false, feedback: "Salah. Meladeni pelaku phising berisiko membocorkan data pribadi Anda." }
+                ]
+            },
+            {
+                title: "Komentar Ujaran Kebencian",
+                desc: "Anda melihat seseorang menulis komentar hinaan fisik dan ujaran kebencian kepada kreator konten di kolom komentar video.",
+                choices: [
+                    { text: "Ikut membalas dengan hujatan yang lebih tajam", correct: false, feedback: "Salah! Ikut menghujat berarti Anda turut melakukan cyberbullying." },
+                    { text: "Laporkan (report) komentar tersebut ke platform dan abaikan", correct: true, feedback: "Benar! Melaporkan konten negatif membantu menciptakan ruang digital yang sehat." },
+                    { text: "Screenshot lalu unggah ke akun pribadi untuk dipermalukan", correct: false, feedback: "Kurang tepat. Tindakan mempermalukan balik tetap berpotensi melanggar norma etika." }
+                ]
+            },
+            {
+                title: "Penemuan File Berbayar Gratis",
+                desc: "Teman Anda membagikan tautan unduhan software berbayar mahal yang sudah dibajak (crack) secara gratis.",
+                choices: [
+                    { text: "Unduh dan gunakan karena menghemat biaya", correct: false, feedback: "Salah! Menggunakan software bajakan melanggar hukum Hak Kekayaan Intelektual (HKI)." },
+                    { text: "Menolak tautan tersebut dan ingatkan teman tentang pelanggaran HKI", correct: true, feedback: "Benar! Menghargai karya cipta orang lain menunjukkan tingkat kesadaran hukum digital yang baik." },
+                    { text: "Bagikan tautan tersebut ke media sosial pribadi", correct: false, feedback: "Salah! Menyebarkan tautan bajakan memperluas pelanggaran hukum hak cipta." }
+                ]
+            },
+            {
+                title: "Permintaan Data Pribadi Asing",
+                desc: "Sebuah aplikasi game gratis meminta izin akses penuh ke kontak telepon, galeri foto, dan lokasi GPS tanpa korelasi dengan fungsi game.",
+                choices: [
+                    { text: "Izinkan semua akses agar game bisa segera dimainkan", correct: false, feedback: "Salah! Memberikan izin berlebih berisiko kebocoran privasi data pribadi." },
+                    { text: "Tolak izin yang tidak relevan atau batalkan pemasangan aplikasi", correct: true, feedback: "Benar! Waspada terhadap aplikasi yang meminta akses data di luar kebutuhan wajarnya." },
+                    { text: "Biarkan saja toh tidak ada yang penting di galeri", correct: false, feedback: "Salah. Privasi data pribadi sangat berharga dan harus dilindungi." }
+                ]
+            }
+        ];
+
+        let currentScenarioIndex = 0;
+        let gameScore = 0;
+        let answered = false;
+
+        function loadScenario() {
+            answered = false;
+            const scenario = scenarios[currentScenarioIndex];
+            document.getElementById('game-progress').innerText = `Skenario ${currentScenarioIndex + 1} dari ${scenarios.length}`;
+            document.getElementById('scenario-title').innerText = scenario.title;
+            document.getElementById('scenario-desc').innerText = scenario.desc;
+            document.getElementById('game-score').innerText = `Skor: ${gameScore}`;
+            
+            const container = document.getElementById('choices-container');
+            container.innerHTML = '';
+            
+            scenario.choices.forEach((choice, index) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-4 rounded-xl border border-slate-200 bg-white hover:bg-brand-50 hover:border-brand-300 transition text-sm font-medium text-slate-700 flex items-center justify-between";
+                btn.innerHTML = `<span>${choice.text}</span> <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>`;
+                btn.onclick = () => selectChoice(index);
+                container.appendChild(btn);
+            });
+
+            document.getElementById('game-feedback').classList.add('hidden');
+            document.getElementById('next-scenario-btn').classList.add('hidden');
+        }
+
+        function selectChoice(choiceIndex) {
+            if (answered) return;
+            answered = true;
+
+            const scenario = scenarios[currentScenarioIndex];
+            const choice = scenario.choices[choiceIndex];
+            const feedbackBox = document.getElementById('game-feedback');
+            
+            feedbackBox.classList.remove('hidden');
+            if (choice.correct) {
+                gameScore++;
+                feedbackBox.className = "p-4 rounded-xl mb-6 text-sm bg-emerald-50 text-emerald-800 border border-emerald-200";
+                feedbackBox.innerHTML = `<i class="fa-solid fa-circle-check mr-2"></i> <strong>Hebat!</strong> ${choice.feedback}`;
+            } else {
+                feedbackBox.className = "p-4 rounded-xl mb-6 text-sm bg-rose-50 text-rose-800 border border-rose-200";
+                feedbackBox.innerHTML = `<i class="fa-solid fa-circle-xmark mr-2"></i> <strong>Kurang Tepat!</strong> ${choice.feedback}`;
+            }
+
+            document.getElementById('game-score').innerText = `Skor: ${gameScore}`;
+            
+            // Disable buttons after choice
+            const buttons = document.getElementById('choices-container').getElementsByTagName('button');
+            for (let b of buttons) {
+                b.classList.add('opacity-75', 'cursor-not-allowed');
+                b.onclick = null;
+            }
+
+            document.getElementById('next-scenario-btn').classList.remove('hidden');
+        }
+
+        function nextScenario() {
+            currentScenarioIndex++;
+            if (currentScenarioIndex < scenarios.length) {
+                loadScenario();
+            } else {
+                document.getElementById('game-card').classList.add('hidden');
+                document.getElementById('game-over-screen').classList.remove('hidden');
+                document.getElementById('final-score-text').innerText = `Skor akhir Anda: ${gameScore} dari ${scenarios.length}`;
+            }
+        }
+
+        function restartGame() {
+            currentScenarioIndex = 0;
+            gameScore = 0;
+            document.getElementById('game-over-screen').classList.add('hidden');
+            document.getElementById('game-card').classList.remove('hidden');
+            loadScenario();
+        }
+
+        // Quiz Data & Logic
+        const quizQuestions = [
+            {
+                question: "1. Apa dampak positif utama dari perkembangan teknologi informasi dalam bidang ekonomi?",
+                options: [
+                    "Meningkatnya angka pengangguran",
+                    "Pertumbuhan e-commerce dan kemudahan transaksi bisnis",
+                    "Batasan wilayah perdagangan semakin ketat",
+                    "Hilangnya toko fisik secara permanen"
+                ],
+                answer: 1
+            },
+            {
+                question: "2. Tindakan perundungan yang dilakukan melalui media digital disebut...",
+                options: ["Hacking", "Cyberbullying", "Phishing", "Spamming"],
+                answer: 1
+            },
+            {
+                question: "3. Apa yang dimaksud dengan istilah 'Netiket'?",
+                options: [
+                    "Jaringan internet cepat",
+                    "Etika dan sopan santun dalam berkomunikasi di internet",
+                    "Keamanan server komputer",
+                    "Undang-undang siber"
+                ],
+                answer: 1
+            },
+            {
+                question: "4. Mengapa penyebaran berita hoax sangat berbahaya bagi masyarakat?",
+                options: [
+                    "Membuat kuota internet cepat habis",
+                    "Menambah wawasan pembaca",
+                    "Dapat memicu kepanikan dan memecah belah persatuan",
+                    "Meningkatkan penjualan online"
+                ],
+                answer: 2
+            },
+            {
+                question: "5. Undang-undang di Indonesia yang mengatur berbagai hal tentang transaksi dan informasi elektronik adalah...",
+                options: ["UU ITE", "UU Lalu Lintas", "UU Hak Cipta Buku", "UU Penyiaran Televisi"],
+                answer: 0
+            }
+        ];
+
+        function loadQuiz() {
+            const container = document.getElementById('quiz-container');
+            container.innerHTML = '';
+            
+            quizQuestions.forEach((q, qIndex) => {
+                const qDiv = document.createElement('div');
+                qDiv.className = "space-y-3 pb-6 border-b border-slate-100 last:border-0";
+                
+                let optionsHtml = '';
+                q.options.forEach((opt, oIndex) => {
+                    optionsHtml += `
+                        <label class="flex items-center space-x-3 p-3 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer transition text-sm text-slate-700">
+                            <input type="radio" name="question-${qIndex}" value="${oIndex}" class="text-brand-600 focus:ring-brand-500">
+                            <span>${opt}</span>
+                        </label>
+                    `;
+                });
+
+                qDiv.innerHTML = `
+                    <h4 class="font-bold text-slate-900 text-base">${q.question}</h4>
+                    <div class="space-y-2 mt-2">${optionsHtml}</div>
+                `;
+                container.appendChild(qDiv);
+            });
+        }
+
+        function submitQuiz() {
+            let correctCount = 0;
+            quizQuestions.forEach((q, qIndex) => {
+                const selected = document.querySelector(`input[name="question-${qIndex}"]:checked`);
+                if (selected && parseInt(selected.value) === q.answer) {
+                    correctCount++;
+                }
+            });
+
+            const resultDiv = document.getElementById('quiz-result');
+            resultDiv.innerHTML = `Skor Kuis Anda: <span class="text-brand-600 font-extrabold">${correctCount} / ${quizQuestions.length}</span>`;
+        }
+
+        // Accordion Toggle Function
+        function toggleAccordion(id) {
+            const el = document.getElementById(id);
+            const icon = document.getElementById('icon-' + id);
+            el.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+
+        // Initialize on load
+        window.onload = function() {
+            loadScenario();
+            loadQuiz();
+        };
+    </script>
+</body>
+</html>
